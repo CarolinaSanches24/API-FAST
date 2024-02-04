@@ -1,0 +1,176 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException;",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List;",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "UUID;",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4;",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Role;",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel;",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Enum;",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = FastAPI()\ndb: List[User] = [\n    User(\n        id = UUID(\"c9029d3e-82c2-4da8-a307-c16fdbff8e54\"),\n        first_name=\"Ana\",\n        last_name=\"Maria\",\n        email=\"ana@gmail.com\",\n        role=[Role.role_1]\n    ),\n    User(",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "Item",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Item(BaseModel):\n    name:str;\n    price:float;\n    is_offter:Union[bool, None] = None\n@app.get(\"/\")\nasync def root():\n    return {\"message\":\"Olá, Devs\"}\n@app.get(\"/items/{item_id}\")\nasync def read_item(item_id:int, busca:Union[str, int] = None):\n    return {\"item_id\":item_id, \"busca\":busca}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "update_item",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def update_item(item_id:int, item:Item):\n    return {\"item_name\":item.name, \"item_id\":item_id}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = FastAPI()\nclass Item(BaseModel):\n    name:str;\n    price:float;\n    is_offter:Union[bool, None] = None\n@app.get(\"/\")\nasync def root():\n    return {\"message\":\"Olá, Devs\"}\n@app.get(\"/items/{item_id}\")\nasync def read_item(item_id:int, busca:Union[str, int] = None):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Role",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class Role(str, Enum):\n    role_1 = \"admin\";\n    role_2  = \"aluna\";\n    role_3 = \"instrutora\";\nclass User(BaseModel):\n    #cria randomicamente o id\n    id:Optional[UUID]= uuid4();\n    #nome\n    first_name:str;\n    #sobrenome",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class User(BaseModel):\n    #cria randomicamente o id\n    id:Optional[UUID]= uuid4();\n    #nome\n    first_name:str;\n    #sobrenome\n    last_name:str;\n    email:str;\n    #perfil\n    role: List[Role];",
+        "detail": "models",
+        "documentation": {}
+    }
+]
